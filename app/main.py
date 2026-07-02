@@ -19,3 +19,10 @@ def health():
     return{
         "status": "healthy",
     }
+
+@app.get("/config")
+
+def config():
+    return{
+        "database":"settings.database_url",   
+    }
