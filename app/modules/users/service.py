@@ -15,7 +15,7 @@ class UserService:
             self,
             data: UserRegister
     )->User:
-        existing_user = await self.repository.get_bye_email(data.email)
+        existing_user = await self.repository.get_by_email(data.email)
         if existing_user:
             raise ValueError("User with this email already exists")
         

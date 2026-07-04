@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from app.core.config import get_settings
+from app.modules.users.router import router as user_router
 
 settings = get_settings()
 
@@ -26,3 +27,5 @@ def config():
     return{
         "database":"settings.database_url",   
     }
+
+app.include_router(user_router)
